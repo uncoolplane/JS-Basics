@@ -23,7 +23,7 @@ function getName() {
   return prompt();
 }
 
-// console.log(getName());
+console.log(getName());
 //////////////////PROBLEM 3////////////////////
 
 
@@ -32,9 +32,9 @@ function getName() {
 //then alerts "Welcome, " plus whatever the users name is.
 
 function welcome() {
-  alert("Welcome " + getName());
+  alert("Welcome, " + getName());
 }
-// welcome();
+welcome();
 
 //////////////////PROBLEM 4////////////////////
 
@@ -98,23 +98,23 @@ testFalsy();
 
 function myName() {
   return "Becky";
-}
+};
 
 //Now save the function definition of myName into a new variable called newMyName
 
-var newMyName = myName();
+var newMyName = new Function(myName());
 
 //Now alert the result of invoking newMyName
 
-// alert(newMyName);
+alert(newMyName);
 
 //////////////////PROBLEM 7////////////////////
 
 //Create a function called outerFn which returns an anonymous function which returns your name.
-var outerFn = (function () {
+var outerFn = function () {
     var name = "Becky";
     return function () {return name;}
-})();
+};
 
 //Now save the result of invoking outerFn into a variable called innerFn.
  var innerFn = outerFn();
