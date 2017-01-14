@@ -34,7 +34,7 @@ function getName() {
 function welcome() {
   alert("Welcome " + getName());
 }
-welcome();
+// welcome();
 
 //////////////////PROBLEM 4////////////////////
 
@@ -51,39 +51,73 @@ welcome();
 
 //What are all the falsy values in JavaScript and how do you check if something is falsy?
 
+// false
+// zero (0)
+// "" (empty string)
+// null
+// undefined
+// NaN (not a number)
 
-  //Answer Here
+function testFalsy(){
+  var a = (false == false);
+  console.log("false-->" + a);
 
+  var b = (false == "");
+  console.log('""-->' + b);
 
+  var c = (false == undefined);
+  console.log("undefined-->" + c);
+
+  var d = (false == null);
+  console.log("null-->" + d);
+
+  var e = (false == NaN);
+  console.log("NaN-->" + e);
+
+  var f = (null == false); // false
+  console.log("null == false-->" + f);
+  var g = (null == null); // true
+  console.log("null == null-->"+g);
+  var h = (undefined == undefined); // true
+  console.log("undefined == undefined-->"+h);
+  var i = (undefined == null); // true
+  console.log("undefined == null-->"+i);
+  var j = (NaN == null); // false
+  console.log("NaN == null-->"+j);
+  var k = (NaN == NaN); // false
+  console.log("NaN == NaN-->"+k);
+}
+
+testFalsy();
+// The falsy values null and undefined are not equivalent to anything except themselves:
+// Finally, the falsy value NaN is not equivalent to anything — including NaN!
 
 //////////////////PROBLEM 6////////////////////
 
-
-
 //Create a function called myName that returns your name
 
-  //Code Here
-
-
+function myName() {
+  return "Becky";
+}
 
 //Now save the function definition of myName into a new variable called newMyName
 
-  //Code Here
+var newMyName = myName();
 
 //Now alert the result of invoking newMyName
 
-
+// alert(newMyName);
 
 //////////////////PROBLEM 7////////////////////
 
-
-
 //Create a function called outerFn which returns an anonymous function which returns your name.
-
-  //Code Here
+var outerFn = (function () {
+    var name = "Becky";
+    return function () {return name;}
+})();
 
 //Now save the result of invoking outerFn into a variable called innerFn.
-
-  //Code Here
+ var innerFn = outerFn();
 
 //Now invoke innerFn.
+console.log(innerFn);
